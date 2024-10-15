@@ -1,0 +1,175 @@
+:root {
+  --primary-color: #146e6e;
+  --secondary-color: #8fdfdf;
+  --text-color: white;
+  --hover-text-color: black;
+  --border-color: black;
+}
+
+body {
+  margin: 0;
+  font-family: formular-light, arial, sans-serif;
+  font-size: 1.125rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide the radio buttons and checkbox */
+input[type="radio"],
+#menu-toggle-checkbox {
+  display: none;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 0;
+  width: 100%;
+}
+
+.header-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  height: 100px;
+  cursor: pointer;
+}
+
+.menu {
+  background-color: #146e6e;
+  color: white;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.menu-item {
+  background-color: #146e6e;
+  color: white;
+  margin-right: 8px;
+  padding: 5px 10px;
+  flex: 1 1 auto;
+  width: 115px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+.menu-item label {
+  cursor: pointer;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+  display: block;
+}
+
+.menu-item:hover {
+  background: var(--secondary-color);
+  color: var(--hover-text-color);
+}
+
+#page1-radio:checked ~ header .menu-item:nth-child(1) label,
+#page2-radio:checked ~ header .menu-item:nth-child(2) label,
+#page3-radio:checked ~ header .menu-item:nth-child(3) label,
+#page4-radio:checked ~ header .menu-item:nth-child(4) label {
+  border-bottom: 2px solid var(--border-color);
+}
+
+main {
+  width: 100%;
+}
+
+.home-section {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 2.875rem;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.content-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#home-radio:checked ~ main #home,
+#page1-radio:checked ~ main #page1,
+#page2-radio:checked ~ main #page2,
+#page3-radio:checked ~ main #page3,
+#page4-radio:checked ~ main #page4 {
+  display: block;
+}
+
+.page-section,
+.home-section {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    background: #f4f4f4;
+    width: 125px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #menu-toggle-checkbox:not(:checked) + label .hamburger-icon::before {
+    content: "\2630"; /* Hamburger icon (≡) */
+  }
+
+  #menu-toggle-checkbox:checked + label .hamburger-icon::before {
+    content: "\00d7"; /* Close icon (×) */
+  }
+
+  .hamburger-icon::before {
+    display: inline-block;
+    font-size: 36px;
+  }
+
+  .menu-item {
+    margin-right: 0;
+    padding: 10px;
+    width: 130px  ;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .menu-item label {
+    display: block;
+  }
+
+  #menu-toggle-checkbox:checked ~ nav .menu {
+    display: flex;
+  }
+
+  .home-section {
+    font-size: 1.625rem;
+  }
+}

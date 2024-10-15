@@ -1,40 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Header</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Epinova hjemmeside - Spesialister på web og e-handel">
+    <title>Epinova Classic</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<input type="radio" id="home-radio" name="page" checked aria-label="Hjem">
+<input type="radio" id="page1-radio" name="page" aria-label="Tenester">
+<input type="radio" id="page2-radio" name="page" aria-label="Tilbud">
+<input type="radio" id="page3-radio" name="page" aria-label="Kontakt oss">
+<input type="radio" id="page4-radio" name="page" aria-label="FAQ">
+
 <header>
-    <div class="logo">Logo</div>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <nav>
-        <ul class="menu">
-            <li><a href="#home" id="home-link">Home</a></li>
-            <li><a href="#about" id="about-link">About</a></li>
-            <li><a href="#services" id="services-link">Services</a></li>
-            <li><a href="#contact" id="contact-link">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="header-wrapper">
+        <label for="home-radio" class="logo">
+            <img src="img/epinova-logo.png" alt="Epinova logo - Tilbake til forsiden">
+        </label>
+        <input type="checkbox" id="menu-toggle-checkbox" aria-label="toggle meny">
+        <label for="menu-toggle-checkbox" class="menu-toggle">
+            <span class="hamburger-icon" aria-hidden="true"></span>
+        </label>
+        <nav>
+            <ul class="menu" role="menu">
+                <li class="menu-item" role="menuitem">
+                    <label for="page1-radio">Tenester</label>
+                </li>
+                <li class="menu-item" role="menuitem">
+                    <label for="page2-radio">Tilbud</label>
+                </li>
+                <li class="menu-item" role="menuitem">
+                    <label for="page3-radio">Kontakt oss</label>
+                </li>
+                <li class="menu-item" role="menuitem">
+                    <label for="page4-radio">FAQ</label>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>
-
 <main>
-    <section id="home" class="content">Welcome to the Home page!</section>
-    <section id="about" class="content">Learn more About us.</section>
-    <section id="services" class="content">Our Services are listed here.</section>
-    <section id="contact" class="content">Contact us through this page.</section>
+    <section id="home" class="home-section">
+        <div class="content-wrapper">
+            <p>
+                Spesialister på web og e-handel. Vi hjelper store norske virksomheter med å lykkes digitalt.
+            </p>
+        </div>
+    </section>
+    <div class="content-wrapper">
+        <section id="page1" class="page-section">
+            <h2 id="tjenester-heading">Tenester</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+        </section>
+        <section id="page2" class="page-section">
+            <h2 id="tilbud-heading">Tilbud</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+        </section>
+        <section id="page3" class="page-section">
+            <h2 id="kontakt-oss-heading">Kontakt oss</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+        </section>
+        <section id="page4" class="page-section">
+            <h2 id="faq-heading">FAQ</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+        </section>
+    </div>
 </main>
-
-<script>
-    document.querySelectorAll('.menu li a').forEach(link => {
-        link.addEventListener('click', function () {
-            document.querySelectorAll('.menu li a').forEach(item => item.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-</script>
 </body>
 </html>
