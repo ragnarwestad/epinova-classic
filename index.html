@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">Logo</div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav>
+        <ul class="menu">
+            <li><a href="#home" id="home-link">Home</a></li>
+            <li><a href="#about" id="about-link">About</a></li>
+            <li><a href="#services" id="services-link">Services</a></li>
+            <li><a href="#contact" id="contact-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="content">Welcome to the Home page!</section>
+    <section id="about" class="content">Learn more About us.</section>
+    <section id="services" class="content">Our Services are listed here.</section>
+    <section id="contact" class="content">Contact us through this page.</section>
+</main>
+
+<script>
+    document.querySelectorAll('.menu li a').forEach(link => {
+        link.addEventListener('click', function () {
+            document.querySelectorAll('.menu li a').forEach(item => item.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
