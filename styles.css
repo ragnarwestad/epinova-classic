@@ -14,7 +14,6 @@ body {
   flex-direction: column;
 }
 
-/* Hide the radio buttons and checkbox */
 input[type="radio"],
 #menu-toggle-checkbox {
   display: none;
@@ -46,7 +45,7 @@ header {
 }
 
 .menu {
-  background-color: #146e6e;
+  background-color: var(--secondary-color);
   color: white;
   list-style: none;
   display: flex;
@@ -56,7 +55,7 @@ header {
 }
 
 .menu-item {
-  background-color: #146e6e;
+  background-color: var(--secondary-color);
   color: white;
   margin-right: 8px;
   padding: 5px 10px;
